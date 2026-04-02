@@ -13,11 +13,11 @@ dependencies = [
     "pydantic",
     "openai",
     "python-dotenv",
-    "openenv>=0.2.0" # This was missing!
+    "openenv>=0.2.0" 
 ]
 
 [project.scripts]
-# This creates the "server entry point" the validator wants
+# This defines the "server entry point" the validator is looking for
 data-privacy-auditor-server = "server.app:main"
 
 [build-system]
