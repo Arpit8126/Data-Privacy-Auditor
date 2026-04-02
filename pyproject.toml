@@ -21,7 +21,8 @@ dependencies = [
 ]
 
 [project.scripts]
-data-privacy-auditor-server = "server.app:main"
+# This MUST match the name used in the Dockerfile CMD
+openenv-server = "server.app:main"
 
 [tool.setuptools]
 packages = ["server"]

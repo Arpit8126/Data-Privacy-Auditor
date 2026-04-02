@@ -42,4 +42,4 @@ HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
 
 # Start the server using the entry point defined in pyproject.toml
 # Or stick to uvicorn but ensure it points to the correct app location
-CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+CMD ["openenv-server", "--host", "0.0.0.0", "--port", "8000"]
