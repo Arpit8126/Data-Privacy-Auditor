@@ -4,22 +4,14 @@ Exposes the environment over HTTP for OpenEnv compatibility.
 """
 
 from __future__ import annotations
-import sys
-import os
-from pathlib import Path
-
-# Add the root directory to sys.path so 'main' and 'models' can be found
-# This fixes the ModuleNotFoundError when running via entry-point
-root_path = Path(__file__).resolve().parent.parent
-sys.path.append(str(root_path))
-
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 
-# These imports now work because of the sys.path change above
-from main import DataPrivacyAuditorEnv
-from models import AuditAction, AuditObservation, AuditState
+# These are now 'relative imports' because they are in the same folder
+from .main import DataPrivacyAuditorEnv
+from .models import AuditAction, AuditObservation, AuditState
 
 app = FastAPI(
     title="Data Privacy & Integrity Auditor",

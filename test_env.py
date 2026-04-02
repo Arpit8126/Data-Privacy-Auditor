@@ -3,7 +3,7 @@ Dry-run test for the Data Privacy & Integrity Auditor environment.
 Tests all 3 tasks, all action types, and reward logic.
 """
 from main import DataPrivacyAuditorEnv
-from models import AuditAction
+from server.models import AuditAction
 
 def test_easy():
     print("=" * 60)

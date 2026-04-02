@@ -15,13 +15,13 @@ from typing import Dict, List, Optional, Set, Tuple
 import pandas as pd
 from openenv.core.env_server import Environment
 
-from models import AuditAction, AuditObservation, AuditState
+from server.models import AuditAction, AuditObservation, AuditState
 
 
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-DATASET_DIR = Path(__file__).resolve().parent / "dataset"
+DATASET_DIR = Path(__file__).resolve().parent.parent / "dataset"
 MAX_STEPS = 50
 PII_MASK = "***MASKED***"
 

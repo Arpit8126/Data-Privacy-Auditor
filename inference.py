@@ -18,8 +18,8 @@ from typing import List
 
 from openai import OpenAI
 
-from main import DataPrivacyAuditorEnv
-from models import AuditAction
+from server.main import DataPrivacyAuditorEnv
+from server.models import AuditAction
 
 # ---------------------------------------------------------------------------
 # Configuration
