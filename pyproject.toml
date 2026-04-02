@@ -21,7 +21,6 @@ dependencies = [
 ]
 
 [project.scripts]
-# The validator looks for this EXACT header and key
 data-privacy-auditor-server = "server.app:main"
 
 [tool.setuptools]
