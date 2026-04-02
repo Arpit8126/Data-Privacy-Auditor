@@ -3,8 +3,9 @@
 Package exports for the Data Privacy & Integrity Auditor environment.
 """
 
-from server.models import AuditAction, AuditObservation, AuditState
-from main import DataPrivacyAuditorEnv
+# Change "from server.models" to "from .models"
+from .models import AuditAction, AuditObservation, AuditState
+from .main import DataPrivacyAuditorEnv
 
 __all__ = [
     "AuditAction",
