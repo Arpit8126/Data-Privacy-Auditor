@@ -25,7 +25,7 @@ env = DataPrivacyAuditorEnv()
 # --- Request / Response schemas -------------------------------------------
 
 class ResetRequest(BaseModel):
-    task_id: str = "easy"
+    task_id: Optional[str] = "easy"
 
 class StepRequest(BaseModel):
     action_type: str
@@ -53,10 +53,12 @@ class StateResponse(BaseModel):
 # --- Endpoints ------------------------------------------------------------
 
 @app.post("/reset", response_model=ObservationResponse)
-def reset(req: ResetRequest):
+def reset(req: Optional[ResetRequest] = None): # Make the whole request optional
     """Reset the environment for the given task."""
     try:
-        obs = env.reset(task_name=req.task_id)
+        # If req is null, default to "easy"
+        t_name = req.task_id if (req and req.task_id) else "easy"
+        obs = env.reset(task_name=t_name) 
         return _obs_to_dict(obs)
     except FileNotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
