@@ -107,3 +107,11 @@ def _obs_to_dict(obs: AuditObservation) -> dict:
         "columns": obs.columns,
         "total_rows": obs.total_rows,
     }
+import uvicorn
+
+def main():
+    """Entry point for the server."""
+    uvicorn.run("server.app:app", host="0.0.0.0", port=8000, reload=False)
+
+if __name__ == "__main__":
+    main()
