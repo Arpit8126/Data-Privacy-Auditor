@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "data-privacy-auditor"
 version = "1.0.0"
@@ -13,17 +17,12 @@ dependencies = [
     "pydantic",
     "openai",
     "python-dotenv",
-    "openenv" 
+    "openenv"
 ]
 
 [project.scripts]
-# This tells the validator to look in the server folder, app.py file, main function
+# The validator looks for this EXACT header and key
 data-privacy-auditor-server = "server.app:main"
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["server*"]
+[tool.setuptools]
+packages = ["server"]
