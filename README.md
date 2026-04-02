@@ -1,3 +1,12 @@
+---
+title: Data Privacy Auditor
+emoji: 🛡️
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+app_port: 8000
+---
 # Data Privacy & Integrity Auditor
 
 **A Reinforcement Learning Environment for Automated Data Sanitization**
