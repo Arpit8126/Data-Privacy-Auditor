@@ -1,0 +1,20 @@
+[project]
+name = "data-privacy-auditor"
+version = "1.0.0"
+description = "RL environment for automated data privacy and integrity auditing"
+authors = [
+    {name = "Arpit Pandey"},
+    {name = "Rishabh Mishra"}
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pandas",
+    "pydantic",
+    "openai",
+    "python-dotenv"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
