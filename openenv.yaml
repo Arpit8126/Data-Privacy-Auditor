@@ -1,0 +1,34 @@
+environment:
+  name: data-privacy-auditor
+  version: "1.0.0"
+  description: >
+    Data Privacy & Integrity Auditor — an RL environment where agents
+    learn to clean datasets by masking PII, removing duplicates, and
+    fixing data-integrity errors.
+  author: Arpit Pandey
+  license: MIT
+
+server:
+  module: server.app
+  attribute: app
+  port: 8000
+
+tasks:
+  - name: easy
+    dataset: dataset/easy.csv
+    description: >
+      Remove duplicate rows and mask PII in structured fields
+      (Name, Email, Phone). 26 rows, 5 duplicates.
+
+  - name: medium
+    dataset: dataset/medium.csv
+    description: >
+      Mask PII in structured fields AND embedded PII inside the
+      Notes column (phone numbers, email addresses). 20 rows.
+
+  - name: hard
+    dataset: dataset/hard.csv
+    description: >
+      Fix complex data-integrity issues: negative salary, non-numeric
+      salary ("REDACTED"), out-of-range User_ID (99), and invalid
+      email format ("not_an_email.com"). 20 rows.
